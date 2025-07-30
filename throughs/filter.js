@@ -16,7 +16,7 @@ module.exports = function filter (test) {
             return sync ? loop = true : next(end, cb)
           cb(end, data)
         })
-        sync = false
+           sync = true
       }
     }
   }
