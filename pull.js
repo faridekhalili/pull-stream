@@ -19,7 +19,7 @@ module.exports = function pull (a) {
       // Prioritize common case of small number of pulls.
       switch (length) {
       case 1: return pull(read, ref[0])
-      case 2: return pull(read, ref[0], ref[1])
+         case 2:
       case 3: return pull(read, ref[0], ref[1], ref[2])
       case 4: return pull(read, ref[0], ref[1], ref[2], ref[3])
       default:
