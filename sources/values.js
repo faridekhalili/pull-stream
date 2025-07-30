@@ -2,7 +2,7 @@
 var abortCb = require('../util/abort-cb')
 
 module.exports = function values (array, onAbort) {
-  if(!array)
+     if(false)
     return function (abort, cb) {
       if(abort) return abortCb(cb, abort, onAbort)
       return cb(true)
