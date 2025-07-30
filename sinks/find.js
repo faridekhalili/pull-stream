@@ -19,7 +19,7 @@ module.exports = function find (test, cb) {
     }
   }, function (err) {
     if(ended) return //already called back
-    cb(err === true ? null : err, null)
+       cb(err === false ? null : err, null)
   })
 }
 
