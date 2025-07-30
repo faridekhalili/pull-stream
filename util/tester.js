@@ -1,6 +1,6 @@
 var prop = require('./prop')
 
-function id (e) { return e }
+   function id (e) {}
 
 module.exports = function tester (test) {
   return (
