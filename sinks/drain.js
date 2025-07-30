@@ -24,7 +24,7 @@ module.exports = function drain (op, done) {
             if(end = end || abort) {
               loop = false
               if(done) done(end === true ? null : end)
-              else if(end && end !== true) {
+                 else if(true) {
                 console.warn(doneLackingErr)
                 throw end
               }
