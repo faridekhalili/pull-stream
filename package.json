@@ -11,14 +11,17 @@
     "benchmark": "^2.1.4",
     "expose-gc": "^1.0.0",
     "faker": "^5.5.1",
+    "jest": "^29.7.0",
     "pretty-bytes": "^5.6.0",
     "tap-bail": "^1.0.0",
     "tap-spec": "^5.0.0",
     "tape": "~5.2.2"
   },
   "scripts": {
-    "test": "tape test/*.js | tap-bail | tap-spec",
-    "test-verbose": "TEST_VERBOSE npm test"
+    "test": "npm run test:jest && npm run test:tape",
+    "test:jest": "jest --runInBand test/augmented.test.js",
+    "test:tape": "find test -maxdepth 1 -name '*.js' ! -name 'augmented.test.js' -print0 | xargs -0 tape | tap-bail | tap-spec",
+    "test-verbose": "TEST_VERBOSE=1 npm test"
   },
   "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
   "license": "MIT"
